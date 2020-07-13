@@ -1,9 +1,7 @@
 .layout {
   position relative;
   min-height 100vh;
-  padding-top: 65px;
-  background #F4F5F8;
-  padding-bottom 50px;
+
 
   @media (min-width 769px) {
     padding-left 65px;
@@ -18,11 +16,15 @@
     height 65px;
     border-bottom 1px solid #dedede;
     background white;
+
+    @media (min-width 769px) {
+       position fixed;
+    }
   }
 
 
   .menu-item {
-    position absolute;
+    position fixed;
     bottom 0;
     left 0;
     width 100%;

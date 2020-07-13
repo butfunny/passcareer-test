@@ -1,7 +1,7 @@
 import React from "react";
 import {LeftSidebar} from "./left-sidebar/left-sidebar";
 import {Header} from "./header/header";
-import {MobileMenu} from "./mobile-menu/mobile-menu";
+import {IOSMobileLayout} from "./ios-mobile-menu/ios-mobile-layout";
 export class Layout extends React.Component {
 
     constructor(props) {
@@ -10,21 +10,21 @@ export class Layout extends React.Component {
 
     render() {
 
-        let {history} = this.props;
+        let {history, children} = this.props;
+
+        return (
+            <IOSMobileLayout
+                history={history}
+                children={children}
+            />
+        )
 
         return (
             <div className="layout">
 
-                <Header/>
-
-                <div className="menu-item">
-                    {/*<LeftSidebar*/}
-                    {/*    history={history}*/}
-                    {/*/>*/}
-                    <MobileMenu
-                        history={history}
-                    />
-                </div>
+                <IOSMobileLayout
+                    history={history}
+                />
 
                 <div className="container">
                     {this.props.children}
