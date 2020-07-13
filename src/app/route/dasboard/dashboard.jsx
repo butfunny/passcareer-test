@@ -1,4 +1,5 @@
 import React from "react";
+import {Layout} from "../../components/layout/layout";
 export class Dashboard extends React.Component {
 
     constructor(props) {
@@ -7,9 +8,11 @@ export class Dashboard extends React.Component {
 
     render() {
         return (
-            <div className="dashboard">
-                <button className="ui primary button">Primary</button>
-            </div>
+            <Layout>
+                <div className="dashboard">
+                    <button className="ui primary button">Primary</button>
+                </div>
+            </Layout>
         );
     }
 }
