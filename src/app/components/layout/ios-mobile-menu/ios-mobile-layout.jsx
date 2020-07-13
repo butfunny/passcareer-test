@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import classnames from "classnames";
 import {Header} from "../header/header";
+import {headerControl} from "../../../common/header-control";
 export class IOSMobileLayout extends React.Component {
 
     constructor(props) {
@@ -9,55 +10,13 @@ export class IOSMobileLayout extends React.Component {
     }
 
     componentDidMount() {
+        let $container = $(".header");
+        this.headerControl = headerControl($container);
+        this.headerControl.startControl();
+    }
 
-        if (window.innerWidth <= 1024) {
-            let lastScrollTop = 0;
-            let startScrollTopPos = null;
-            let $container = $(".header");
-
-            $(window).scroll(function() {
-                let st = $(this).scrollTop();
-
-                if (st == 0) {
-                    $container.removeClass("fixed");
-                    $container.removeClass("show-header");
-                    startScrollTopPos = null;
-                }
-
-                if (st > 80) {
-                    $container.addClass("transition");
-                } else {
-                    $container.removeClass("transition");
-                }
-
-                if (st >= 65) {
-
-                    $container.addClass("fixed");
-                    if (startScrollTopPos && startScrollTopPos < 65) startScrollTopPos = 65;
-
-                    if (startScrollTopPos && startScrollTopPos - st >= 10) {
-                        startScrollTopPos = st;
-                        $container.addClass("show-header");
-                        return;
-                    }
-
-                    if (startScrollTopPos && st - startScrollTopPos > 10) {
-                        $container.removeClass("show-header");
-                        startScrollTopPos = null;
-                        return;
-                    }
-
-
-                    if (st <= lastScrollTop && !startScrollTopPos) {
-                        startScrollTopPos = st;
-                        return;
-                    }
-                }
-
-
-                lastScrollTop = st;
-            });
-        }
+    componentWillUnmount() {
+        this.headerControl.stopControl();
     }
 
 
