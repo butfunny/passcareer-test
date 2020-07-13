@@ -1,5 +1,6 @@
 import React from "react";
 import classnames from "classnames";
+import {Link} from "react-router-dom";
 export class LeftSidebar extends React.Component {
 
     constructor(props) {
@@ -8,16 +9,22 @@ export class LeftSidebar extends React.Component {
 
     render() {
 
+        let {history} = this.props;
+
         const topSidebarItems = [{
             iconName: "home",
-            name: "Dashboard"
+            name: "Dashboard",
+            to: "/"
         }, {
             iconName: "bell",
-            name: "Notifications"
+            name: "Notifications",
+            to: "/notifications"
         }, {
             iconName: "cog",
-            name: "Settings"
+            name: "Settings",
+            to: "/settings"
         }];
+
 
 
 
@@ -26,7 +33,7 @@ export class LeftSidebar extends React.Component {
                 <div className="sidebar-item-wrapper">
 
                     { topSidebarItems.map((item, index) => (
-                        <div className={classnames("sidebar-item", index == 0 && "active")} key={index}>
+                        <Link to={item.to} className={classnames("sidebar-item", history.location.pathname == item.to && "active")} key={index}>
                             <div className="icon">
                                 <i aria-hidden="true" className={`${item.iconName} big icon`}/>
                             </div>
@@ -38,14 +45,16 @@ export class LeftSidebar extends React.Component {
 
                                 <div className="arrow"/>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 
 
                 <div className="user-action">
                     <div className="sidebar-item-wrapper bottom-action">
-                        <div className="sidebar-item">
+                        <div className="sidebar-item"
+                             onClick={() => alert("logout")}
+                        >
                             <div className="icon">
                                 <i aria-hidden="true" className="sign-out large icon"/>
                             </div>

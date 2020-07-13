@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Dashboard} from "./app/route/dasboard/dashboard";
+import {AppRoute} from "./app/route/app-route";
 
-ReactDOM.render(<Dashboard />, document.getElementById('root'));
+ReactDOM.render(<AppRoute />, document.getElementById('root'));
 
 
 

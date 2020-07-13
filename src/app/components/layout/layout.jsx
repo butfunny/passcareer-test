@@ -8,13 +8,18 @@ export class Layout extends React.Component {
     }
 
     render() {
+
+        let {history} = this.props;
+
         return (
             <div className="layout">
 
                 <Header/>
 
                 <div className="menu-item">
-                    <LeftSidebar/>
+                    <LeftSidebar
+                        history={history}
+                    />
                 </div>
 
                 <div className="container">
