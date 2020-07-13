@@ -15,6 +15,7 @@ function RouterSwitch() {
                 <Route exact path="/" component={Dashboard} />
                 <Route exact path="/notifications" component={NotificationRoute} />
                 <Route exact path="/settings" component={SettingsRoute} />
+                <Route exact path="/more" component={SettingsRoute} />
             </Layout>
         </Switch>
     )

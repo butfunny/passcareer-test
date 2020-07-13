@@ -1,0 +1,29 @@
+.mobile-menu {
+  background white;
+  border-top: 1px solid #dedede;
+  height 50px;
+  display flex;
+  width 100%;
+  position relative;
+
+  .mobile-menu-item {
+    width 25%;
+    text-align center;
+    line-height 50px;
+    color lighten(#7f7f81, 20%);
+    transition color .2s;
+
+    &.active {
+      color primary-color;
+    }
+  }
+
+  .active-line {
+    position absolute;
+    top: -1px;
+    height 2px;
+    width 25%;
+    transition left .2s;
+    background primary-color;
+  }
+}
