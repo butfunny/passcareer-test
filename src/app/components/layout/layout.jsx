@@ -2,6 +2,7 @@ import React from "react";
 import {LeftSidebar} from "./left-sidebar/left-sidebar";
 import {Header} from "./header/header";
 import {IOSMobileLayout} from "./ios-mobile-menu/ios-mobile-layout";
+import {AndroidMobileLayout} from "./android-mobile-layout/android-mobile-layout";
 export class Layout extends React.Component {
 
     constructor(props) {
@@ -11,6 +12,13 @@ export class Layout extends React.Component {
     render() {
 
         let {history, children} = this.props;
+
+        return (
+            <AndroidMobileLayout
+                history={history}
+                children={children}
+            />
+        )
 
         return (
             <IOSMobileLayout

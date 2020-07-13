@@ -3,6 +3,22 @@ import {Link} from "react-router-dom";
 import classnames from "classnames";
 import {Header} from "../header/header";
 import {headerControl} from "../../../common/header-control";
+
+export const menuItems = [{
+    iconName: "home",
+    to: "/"
+}, {
+    iconName: "bell",
+    to: "/notifications"
+}, {
+    iconName: "cog",
+    to: "/settings"
+}, {
+    iconName: "bars",
+    name: "More",
+    to: "/more"
+}];
+
 export class IOSMobileLayout extends React.Component {
 
     constructor(props) {
@@ -26,20 +42,7 @@ export class IOSMobileLayout extends React.Component {
         let {history, children} = this.props;
 
 
-        const menuItems = [{
-            iconName: "home",
-            to: "/"
-        }, {
-            iconName: "bell",
-            to: "/notifications"
-        }, {
-            iconName: "cog",
-            to: "/settings"
-        }, {
-            iconName: "bars",
-            name: "More",
-            to: "/more"
-        }];
+
 
         return (
             <div className="ios-mobile-menu">

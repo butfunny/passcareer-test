@@ -1,0 +1,78 @@
+.android-mobile-layout {
+  position relative;
+  min-height 100vh;
+  padding-top: 115px;
+  background #F4F5F8;
+
+  .android-mobile-header {
+    position absolute;
+    top: 0;
+    left 0;
+    width 100%;
+    height 65px;
+    border-bottom 1px solid #dedede;
+    background white;
+
+    &.transition {
+      transition transform .5s;
+    }
+
+
+    &.fixed {
+      position fixed;
+      left: 0;
+      width: 100%;
+      top: 0;
+      transform translateY(-65px);
+
+      &.show-header {
+        transform translateY(0);
+      }
+    }
+
+    .header {
+      width 100%;
+      height 65px;
+      background white;
+    }
+
+
+    .nav-items {
+      background white;
+      border-bottom: 1px solid #dedede;
+      height 50px;
+      display flex;
+      width 100%;
+      position relative;
+
+      .mobile-menu-item {
+        width 25%;
+        text-align center;
+        line-height 50px;
+        color lighten(#7f7f81, 20%);
+        transition color .2s;
+
+        &.active {
+          color primary-color;
+        }
+      }
+
+      .active-line {
+        position absolute;
+        bottom: -1px;
+        height 2px;
+        width 25%;
+        transition left .2s;
+        background primary-color;
+      }
+    }
+
+
+
+  }
+
+
+
+}
+
+
