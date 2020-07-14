@@ -2,6 +2,7 @@ import React from "react";
 import {Layout} from "../../components/layout/layout";
 import {DashboardTransactions} from "./transactions/dashboard-transactions";
 import {SendMoneyViaPhone} from "./send-money-via-phone/send-money-via-phone";
+import {DashboardMoneyBox} from "./money-box/dashboard-money-box";
 export class Dashboard extends React.Component {
 
     constructor(props) {
@@ -30,6 +31,26 @@ export class Dashboard extends React.Component {
             name: "Mobile Phone Recharge",
             money: 10,
             income: false
+        }, {
+            name: "Mobile Phone Recharge",
+            money: 10,
+            income: false
+        }, {
+            name: "Mobile Phone Recharge",
+            money: 10,
+            income: false
+        }, {
+            name: "Mobile Phone Recharge",
+            money: 10,
+            income: false
+        }, {
+            name: "Mobile Phone Recharge",
+            money: 10,
+            income: false
+        }, {
+            name: "Mobile Phone Recharge",
+            money: 10,
+            income: false
         }];
 
         return (
@@ -50,17 +71,9 @@ export class Dashboard extends React.Component {
                     </div>
 
                     <div className="dashboard-item-col right-col">
-                        <div className="item-row">
-                            <div className="item-col item-col-left">
-                                <SendMoneyViaPhone/>
+                        <SendMoneyViaPhone/>
 
-                                money box
-                            </div>
-
-                            <div className="item-col item-col-right">
-                                send to contact
-                            </div>
-                        </div>
+                        <DashboardMoneyBox/>
                     </div>
                 </div>
             </div>
