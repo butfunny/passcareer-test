@@ -1,0 +1,43 @@
+.dashboard-transactions {
+  .card-container {
+    .transaction {
+      padding 10px 15px;
+      padding-right 40px;
+      position relative;
+      border-bottom 1px solid #dedede;
+      cursor pointer;
+      transition background .2s;
+
+      &:hover {
+        background darken(white, 3%);
+
+      }
+
+      .transaction-name {
+        font-weight bold;
+        font-size 15px;
+      }
+
+      .transaction-date {
+        font-size 13px;
+        color #7f7f81;
+      }
+
+      .transaction-money {
+        position absolute;
+        right 15px;
+        top: 17px;
+        font-size 16px;
+        font-weight bold;
+
+        &.outcome {
+          color outcome-color;
+        }
+
+        &.income {
+          color income-color;
+        }
+      }
+    }
+  }
+}
