@@ -17,7 +17,7 @@ export class Dashboard extends React.Component {
 
         setInterval(() => {
             this.setState({transactions: [{
-                    name: "Some random name added",
+                    name: "Some transaction added",
                     money: Math.floor(Math.random() * 1000),
                     income: Math.floor(Math.random() * 1000) % 2 == 0,
                     date: new Date()
