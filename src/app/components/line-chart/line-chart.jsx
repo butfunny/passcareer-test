@@ -41,7 +41,7 @@ export class LineChart extends React.Component {
         const svgWidth = chartWidth,
             svgHeight = 152;
 
-        const margin = { top: 20, right: 30, bottom: 30, left: 30 },
+        const margin = { top: 20, right: 30, bottom: 30, left: 60 },
             width = svgWidth - margin.left - margin.right,
             height = svgHeight - margin.top - margin.bottom;
 

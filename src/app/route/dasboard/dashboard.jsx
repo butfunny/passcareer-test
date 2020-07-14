@@ -5,14 +5,29 @@ import {SendMoneyViaPhone} from "./send-money-via-phone/send-money-via-phone";
 import {DashboardMoneyBox} from "./money-box/dashboard-money-box";
 import {DashboardAnalytics} from "./analytics/dashboard-analytics";
 import {transactions} from "./transactions-data";
+import {sortBy} from "lodash";
 export class Dashboard extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            transactions: sortBy(transactions, t => -new Date(t.date))
+        };
+
+
+        setInterval(() => {
+            this.setState({transactions: [{
+                    name: "Some random name added",
+                    money: Math.floor(Math.random() * 1000),
+                    income: Math.floor(Math.random() * 1000) % 2 == 0,
+                    date: new Date()
+                }].concat(this.state.transactions)})
+        }, 5000)
     }
 
     render() {
 
+        let {transactions} = this.state;
 
         return (
             <div className="dashboard-route router-container">
