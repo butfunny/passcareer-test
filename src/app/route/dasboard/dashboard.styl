@@ -1,32 +1,38 @@
 .dashboard-route {
   .dashboard-item-wrapper {
-    display flex;
+
     margin-top: 20px;
 
-    .left-col {
-      width 35%;
-      padding-right 10px;
-    }
-
-    .right-col {
-      width 65%;
-      padding-left 10px;
-    }
-
-
-    .item-row {
+    @media (min-width 769px) {
       display flex;
 
-      .item-col-left {
-        width 50%;
+      .left-col {
+        width 35%;
         padding-right 10px;
       }
 
-      .item-col-right {
-        width 50%;
+      .right-col {
+        width 65%;
         padding-left 10px;
       }
+
+
+      .item-row {
+        display flex;
+
+        .item-col-left {
+          width 50%;
+          padding-right 10px;
+        }
+
+        .item-col-right {
+          width 50%;
+          padding-left 10px;
+        }
+      }
     }
+
+
 
     .dashboard-card-item {
       margin-bottom 20px;
