@@ -120,7 +120,7 @@ export class LineChart extends React.Component {
                     { data.map(item => {
                         return (
                             <g className="city" key={item.id}>
-                                <path
+                                <Path
                                     className="line"
                                     d={line(item.values)}
                                     style={{stroke: z(item.id), opacity: hiddenField.indexOf(item.id) > -1 ? 0 : 1}}
@@ -162,5 +162,37 @@ export class LineChart extends React.Component {
 
             </svg>
         );
+    }
+}
+
+class Path extends React.Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            totalLength: 0
+        }
+    }
+
+    componentDidMount() {
+        const node = ReactDOM.findDOMNode(this);
+        this.setState({totalLength: node.getTotalLength()})
+    }
+
+    render() {
+
+        let {className, d, style} = this.props;
+        let {totalLength} = this.state;
+
+
+        return (
+            <path
+                className={classnames(className, "line-path")}
+                d={d}
+                style={style}
+                strokeDashoffset={totalLength}
+                strokeDasharray={totalLength}
+            />
+        )
     }
 }
