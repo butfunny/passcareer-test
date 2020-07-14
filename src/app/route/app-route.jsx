@@ -4,6 +4,7 @@ import {Layout} from "../components/layout/layout";
 import {Dashboard} from "./dasboard/dashboard";
 import {NotificationRoute} from "./notification/notification-route";
 import {SettingsRoute} from "./settings/settings-route";
+import {MouseTooltipRegistry} from "../components/mouse-tooltip/mouse-tooltip";
 
 
 function RouterSwitch() {
@@ -32,6 +33,7 @@ export class AppRoute extends React.Component {
         return (
             <BrowserRouter>
                 <Route component={RouterSwitch}/>
+                <MouseTooltipRegistry/>
             </BrowserRouter>
         );
     }

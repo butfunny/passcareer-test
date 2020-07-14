@@ -1,0 +1,53 @@
+.dashboard-analytics {
+  .card-container {
+
+    padding 15px;
+
+    .description-chart {
+      margin-top: 15px;
+      text-align center;
+      font-size: 10px;
+      color #607d8b;
+
+
+      .item {
+        padding-left 13px;
+        position relative;
+        padding-right 15px;
+        cursor pointer;
+        opacity 1;
+        transition opacity .3s;
+        no-select();
+        text-transform uppercase;
+
+        &.hidden {
+          opacity .5
+        }
+
+        .circle {
+          width 6px;
+          height 6px;
+          border-radius 50%;
+          position absolute;
+          left: 0;
+          top: 50%;
+          transform: translate(0, -50%);
+
+
+          &.income {
+            background-color: #27c195;
+          }
+
+
+          &.outcome {
+            background-color: #f55173;
+
+          }
+        }
+      }
+
+
+    }
+
+  }
+}

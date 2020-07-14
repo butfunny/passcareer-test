@@ -3,6 +3,8 @@ import {Layout} from "../../components/layout/layout";
 import {DashboardTransactions} from "./transactions/dashboard-transactions";
 import {SendMoneyViaPhone} from "./send-money-via-phone/send-money-via-phone";
 import {DashboardMoneyBox} from "./money-box/dashboard-money-box";
+import {DashboardAnalytics} from "./analytics/dashboard-analytics";
+import {transactions} from "./transactions-data";
 export class Dashboard extends React.Component {
 
     constructor(props) {
@@ -11,47 +13,6 @@ export class Dashboard extends React.Component {
 
     render() {
 
-        const transactions = [{
-            name: "Uber Eat",
-            money: 45,
-            income: false
-        }, {
-            name: "Telecom Services",
-            money: 157,
-            income: false
-        }, {
-            name: "Mobile Phone Recharge",
-            money: 10,
-            income: false
-        }, {
-            name: "Mobile Phone Recharge",
-            money: 10,
-            income: true
-        }, {
-            name: "Mobile Phone Recharge",
-            money: 10,
-            income: false
-        }, {
-            name: "Mobile Phone Recharge",
-            money: 10,
-            income: false
-        }, {
-            name: "Mobile Phone Recharge",
-            money: 10,
-            income: false
-        }, {
-            name: "Mobile Phone Recharge",
-            money: 10,
-            income: false
-        }, {
-            name: "Mobile Phone Recharge",
-            money: 10,
-            income: false
-        }, {
-            name: "Mobile Phone Recharge",
-            money: 10,
-            income: false
-        }];
 
         return (
             <div className="dashboard-route router-container">
@@ -71,9 +32,20 @@ export class Dashboard extends React.Component {
                     </div>
 
                     <div className="dashboard-item-col right-col">
-                        <SendMoneyViaPhone/>
+                        <div className="item-row">
+                            <div className="item-col-left">
+                                <SendMoneyViaPhone/>
+                            </div>
 
-                        <DashboardMoneyBox/>
+                            <div className="item-col-right">
+                                <DashboardMoneyBox/>
+                            </div>
+                        </div>
+
+                        <DashboardAnalytics
+                            transactions={transactions}
+                        />
+
                     </div>
                 </div>
             </div>

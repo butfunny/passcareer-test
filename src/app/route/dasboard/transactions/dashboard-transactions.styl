@@ -1,12 +1,15 @@
 .dashboard-transactions {
   .card-container {
+    max-height 500px;
+    overflow auto;
+
     .transaction {
       padding 10px 15px;
-      padding-right 40px;
       position relative;
       border-bottom 1px solid #dedede;
       cursor pointer;
       transition background .2s;
+      padding-right: 65px;
 
       &:hover {
         background darken(white, 3%);

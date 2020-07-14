@@ -1,0 +1,76 @@
+
+.axis {
+  .tick {
+    text {
+      font-size: 12px;
+      fill: #607d8b;
+    }
+  }
+}
+
+.line {
+  fill: none;
+  stroke-width: 2px;
+  box-shadow: 3.7px 5.9px 12px 0 #99d7f6;
+  transition: opacity .3s;
+  opacity 1;
+}
+
+.grid line {
+  stroke: #edeef3;
+  stroke-opacity: 0.7;
+  shape-rendering: crispEdges;
+}
+
+.grid path {
+  stroke-width: 0;
+}
+
+
+.axis path,
+.axis line {
+  stroke: transparent;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.tooltip-box {
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: #455a64;
+  color rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-statistic {
+
+  .item-display {
+    position relative;
+    padding-left 13px;
+
+    .circle {
+      width 6px;
+      height 6px;
+      border-radius 50%;
+      position absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+
+
+      &.income {
+        background-color: #27c195;
+      }
+
+
+
+      &.outcome {
+        background-color: #f55173;
+
+      }
+    }
+  }
+}
+
+
